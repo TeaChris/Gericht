@@ -1,11 +1,13 @@
+import Img from '../assets/header-img.jpg'
+
 const Header = () => {
   return (
     <header className="w-full mt-12 h-[50rem] bg-colorBlack">
       <div className="container mx-auto flex flex-col md:flex md:flex-row items-center gap-8">
         {/* # tags */}
-        <div className="hidden md:flex items-center gap-5">
-          <p>#Baf</p>
-          <p>#Gericht</p>
+        <div className="hidden md:flex md:flex-col items-center gap-12">
+          <p className="transform rotate-[270deg] text-white">#Gericht</p>
+          <p className="transform rotate-[270deg] text-white">#Baf</p>
         </div>
         {/* text */}
         <div className="flex flex-col items-start gap-4">
@@ -29,6 +31,20 @@ const Header = () => {
             </p>
             <button className=""></button>
           </div>
+        </div>
+        {/* img */}
+        <div className="">
+          <div className="">
+            <div className="w-96 h-16 bg-colorPrimary mt-12"></div>
+            <div className="w-96 h-72 bg-colorPrimary"></div>
+          </div>
+          <div className="">
+            <img src={Img} alt="header img" />
+          </div>
+        </div>
+        <div className="hidden md:flex md:flex-col items-center gap-1">
+          <div className="w-1 h-8 bg-colorPrimary"></div>
+          <span>Scroll</span>
         </div>
       </div>
     </header>
