@@ -1,6 +1,4 @@
-import { useState } from 'react'
-// import { RxHamburgerMenu } from 'react-icons/rx'
-// import { GrClose } from 'react-icons/gr'
+import { useState, useEffect } from 'react'
 import { navlinks } from '../../data'
 import NavBtn from './NavBtn'
 
@@ -8,12 +6,32 @@ import NavBtn from './NavBtn'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+
+  // change navbar on scroll
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  const handleScroll = () => {
+    const offset = window.scrollY
+    if (offset > 0) {
+      setScrolled(true)
+    } else {
+      setScrolled(false)
+    }
+  }
 
   return (
-    <nav className="w-full h-14">
-      <div className="flex container mx-auto items-center justify-between py-2">
+    <nav
+      className={`fixed top-0 h-14 w-full z-50 bg-colorBlack grid place-items-center${
+        scrolled ? 'backdrop-blur-lg' : ''
+      }`}
+    >
+      <div className="flex container mx-auto items-center justify-between">
         {/* logo */}
-        <div className="w-full flex items-center justify-between  p-3 z-50">
+        <div className="w-full flex items-center justify-between p-3 z-50">
           <h2 className="text-white text-2xl uppercase font-extrabold md:cursor-pointer">
             Gerícht
           </h2>
@@ -21,7 +39,7 @@ const Navbar = () => {
           <NavBtn isOpen={isOpen} setIsOpen={setIsOpen} />
         </div>
         {/* links container */}
-        <ul className="md:flex hidden items-center gap-6">
+        <ul className="md:flex hidden items-center gap-5">
           {/* rendering the links using map method */}
           {navlinks.map((links) => {
             const { name, link } = links
@@ -34,13 +52,13 @@ const Navbar = () => {
             )
           })}
         </ul>
-        <div className="hidden md:flex gap-4 items-center">
+        <div className="flex items-center gap-5">
           <div className="">
-            <a className="text-white cursor-pointer">Login/Registration</a>
+            <h2>Login/Registration</h2>
           </div>
-          <div className="bg-white w-1 h-6"></div>
+          <div className="w-1 h-5 bg-colorPrimary"></div>
           <div className="">
-            <a className="text-white cursor-pointer">Book</a>
+            <h5>Book</h5>
           </div>
         </div>
       </div>

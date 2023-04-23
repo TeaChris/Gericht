@@ -9,6 +9,7 @@ export default {
       },
       colors: {
         colorPrimary: '#dcca87',
+        colorBlack: ' #0c0c0c',
       },
       backgroundImage: {
         background: "url('./src/assets/footer.jpg')",
