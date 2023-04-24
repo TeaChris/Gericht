@@ -52,7 +52,7 @@ const Navbar = () => {
             )
           })}
         </ul>
-        <div className="flex items-center gap-5">
+        <div className="hidden md:flex items-center gap-5">
           <div className="">
             <h2>Login/Registration</h2>
           </div>

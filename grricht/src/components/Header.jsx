@@ -1,6 +1,11 @@
 import Img from '../assets/header-img.jpg'
+import Buttons from './Buttons'
+import Marking from './Marking'
 
 const Header = () => {
+  const handleClick = () => {
+    console.log('Button clicked!')
+  }
   return (
     <header className="w-full mt-12 h-[50rem] bg-colorBlack">
       <div className="container mx-auto flex flex-col md:flex md:flex-row items-center gap-12">
@@ -17,10 +22,7 @@ const Header = () => {
               <h5 className="capitalize text-xl text-yellow-50">
                 Chase the new Flavour
               </h5>
-              <div className="flex items-center">
-                <div className="md:h-1 w-6 bg-colorPrimary"></div>
-                <div className="w-6 h-2 rounded-3xl bg-transparent border-2 border-colorPrimary"></div>
-              </div>
+              <Marking />
             </div>
             <div className="flex flex-col gap-5 items-start">
               <h2 className="text-xl text-colorPrimary capitalize tracking-tighter text-[5.65rem] font-bold leading-snug">
@@ -32,9 +34,7 @@ const Header = () => {
                 crafted with only the freshest ingredients. Experience a taste
                 of heaven with our heavenly desserts and gourmet treats.!
               </p>
-              <button className="w-32 h-12 bg-colorPrimary text-colorBlack duration-500 hover:border-2 hover:text-colorPrimary hover:border-colorPrimary hover:bg-transparent hover:transition hover:duration-500">
-                Explore Menu
-              </button>
+              <Buttons onClick={handleClick()}>Explore Now</Buttons>
             </div>
           </div>
         </div>
@@ -45,11 +45,11 @@ const Header = () => {
             <div className="w-56 h-56 bg-colorPrimary absolute top-28 right-[-4%]"></div>
 
             <div className="bg-colorPrimary w-56 h-56 absolute bottom-[-3%] left-[-3%]"></div>
-            <div className="">
+            <div className="z-50">
               <img
                 src={Img}
                 alt="header img"
-                className="w-[30rem] mt-32 z-10"
+                className="w-[30rem] mt-32 z-50"
               />
             </div>
           </div>
