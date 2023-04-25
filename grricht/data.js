@@ -1,3 +1,8 @@
+import Img2 from './src/assets/award2.png'
+import Img1 from './src/assets/award1.png'
+import Img5 from './src/assets/award5.png'
+import Img3 from './src/assets/award3.png'
+
 export const navlinks = [
   {
     name: 'Home',
@@ -84,5 +89,32 @@ export const cocktails = [
     name: 'nefroni',
     desc: 'gin - sweet vermouth - campari - orange ganish',
     price: 26,
+  },
+]
+
+export const awards = [
+  {
+    title: 'bib gourmund',
+    desc: 'lorem ipsum dolor sit ernet consectour',
+    img: Img2,
+    id: 1,
+  },
+  {
+    title: 'rising star',
+    desc: 'lorem ipsum dolor sit ernet consectour',
+    img: Img1,
+    id: 2,
+  },
+  {
+    title: 'AA hospitality',
+    desc: 'lorem ipsum dolor sit ernet consectour',
+    img: Img5,
+    id: 3,
+  },
+  {
+    title: 'outstanding chef',
+    desc: 'lorem ipsum dolor sit ernet consectour',
+    img: Img3,
+    id: 4,
   },
 ]

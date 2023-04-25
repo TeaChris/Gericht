@@ -1,5 +1,5 @@
 const Cocktails = ({ cock }) => {
-  console.log(cock)
+  // console.log(cock)
   return (
     <div>
       {cock.map((item) => {

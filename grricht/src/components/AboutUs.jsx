@@ -13,8 +13,12 @@ const AboutUs = () => {
       <div className="container mx-auto w-[50rem] flex flex-col md:flex md:flex-row items-center gap-8 md:absolute md:top-0 md:right-[16rem]">
         {/* left */}
         <div className="flex flex-col items-center md:items-end gap-4">
-          <div className="">
+          <div className="flex flex-col items-end">
             <h3 className="text-4xl">About Us</h3>
+            <div className="flex items-center">
+              <div className="w-6 h-2 rounded-3xl bg-transparent border-2 border-colorPrimary"></div>
+              <div className="md:h-1 w-6 bg-colorPrimary"></div>
+            </div>
           </div>
           <div className="">
             <p className="text-white font-sans text-sm font-thin text-end">

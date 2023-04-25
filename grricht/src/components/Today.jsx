@@ -4,10 +4,11 @@ import WineAndBeer from './WineAndBeer'
 
 import Todayy from '../assets/today.png'
 import Cocktails from './Cocktails'
+import Buttons from './Buttons'
 
 const Today = () => {
   return (
-    <section className="w-full h-[45rem] bg-colorBlack">
+    <section className="w-full h-[50rem] bg-colorBlack">
       <div className="container mx-auto flex flex-col items-center gap-8">
         <div className="flex flex-col items-center gap-8 mt-28">
           <div className="flex flex-col items-center gap-1">
@@ -41,6 +42,9 @@ const Today = () => {
             <Cocktails cock={cocktails} />
           </div>
         </div>
+
+        {/* button */}
+        <Buttons>View More</Buttons>
       </div>
     </section>
   )
